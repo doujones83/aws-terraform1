@@ -1,7 +1,7 @@
 provider "aws" {
     region = "us-east-1"
-    access_key = "AKIA3EZ5M2KHCVKGZDNM"
-    secret_key = "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"
+    access_key = ${access_key}
+    secret_key =  ${secret_key}
 }
 
 resource "aws_vpc" "first-vpc" {
@@ -30,7 +30,7 @@ resource "aws_route_table" "main-route-table" {
   }
 
   tags = {
-    Name = "example"
+    Name = "Hello"
   }
 }
 
@@ -130,16 +130,3 @@ resource "aws_network_interface" "web-server-nic" {
 
 }
 
-/* resource "aws_instance" "terraform1" {
-    ami  = "ami-007855ac798b5175e"
-    instance_type  = "t2.micro"
-    tags = {
-        Name = "My Terraform WB"
-    }
-} */
-
-/* resource "<provider>_<resource_type>" "name" {
-    config options.....
-    key = "value"
-    key2 = "another value"
-} */
